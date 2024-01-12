@@ -41,8 +41,7 @@ function coordinate(p) {
 
   const value = variant === "absolute" ?
     p.parse(number) 
-
-    : p.must(number);
+    : p.optional(number) ?? { type: "number", value: 0, };
 
   return {
     type: "coordinate",
