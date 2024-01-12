@@ -1,22 +1,41 @@
-function isAlphabetic(char) {
-  return /[A-Za-z]/.test(char);
+const { isWhitespace } = require("./predicates");
+
+function space(p) {
+  if (p.next() !== " ") {
+    throw new SyntaxError(`Expected space, got "${p.next()}"`);
+  }
+  p.consume();
 }
 
-function isNumeric(char) {
-  return /\d/.test(char);
+function maybeSpace(p) {
+  if (p.next() === " ") {
+    p.consume();
+    return true;
+  }
+  return false;
 }
 
-function isWhitespace(char) {
-  return /\s/.test(char);
+function newline(p) {
+  if (p.eof()) {
+    return;
+  }
+
+  if (p.next() !== "\n") {
+    throw new SyntaxError(`Expected newline after command, got "${p.next()}"`);
+  }
+  p.consume();
 }
 
-function isNamespaceCharacter(char) {
-  return /[a-z0-9\-_.]/.test(char);
+function skipWhitespace(p) {
+  while (isWhitespace(p.next())) {
+    p.consume();
+  }
 }
 
 module.exports = {
-  isAlphabetic,
-  isNumeric,
-  isWhitespace,
-  isNamespaceCharacter,
+  space,
+  maybeSpace,
+  newline,
+  skipWhitespace,
 };
+
