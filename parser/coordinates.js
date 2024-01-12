@@ -1,3 +1,4 @@
+const { ParseError } = require("./errors");
 const { space } = require("./helpers");
 const { number } = require("./literals");
 
@@ -10,13 +11,13 @@ function vec3(p) {
 
   if (x.variant === "local") {
     if (y.variant !== "local" || z.variant !== "local") {
-      throw new SyntaxError(
+      throw new ParseError(
         "Local and relative/absolute coordinates cannot be mixed"
       );
     }
   } else {
     if (y.variant === "local" || z.variant === "local") {
-      throw new SyntaxError(
+      throw new ParseError(
         "Local and relative/absolute coordinates cannot be mixed"
       );
     }

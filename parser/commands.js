@@ -1,4 +1,5 @@
 const { vec3 } = require("./coordinates");
+const { ParseError } = require("./errors");
 const { space, maybeSpace } = require("./helpers");
 const { resourceLocation } = require("./identifiers");
 const { line } = require("./misc");
@@ -14,7 +15,7 @@ function command(p) {
       return p.must(summonCommand);
 
     default:
-      throw new SyntaxError(`Unrecognised command "${name}"`);
+      throw new ParseError(`Unrecognised command "${name}"`);
   }
 }
 
@@ -24,7 +25,7 @@ function commandName(p) {
     command += p.consume();
   }
   if (command.length === 0) {
-    throw new SyntaxError("Expected command", true);
+    throw new ParseError("Expected command", true);
   }
   return command;
 }

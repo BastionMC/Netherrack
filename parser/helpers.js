@@ -1,8 +1,9 @@
 const { isWhitespace } = require("./predicates");
+const { ParseError } = require("./errors");
 
 function space(p) {
   if (p.next() !== " ") {
-    throw new SyntaxError(`Expected space, got "${p.next()}"`);
+    throw new ParseError(`Expected space, got "${p.next()}"`);
   }
   p.consume();
 }
@@ -21,7 +22,7 @@ function newline(p) {
   }
 
   if (p.next() !== "\n") {
-    throw new SyntaxError(`Expected newline after command, got "${p.next()}"`);
+    throw new ParseError(`Expected newline after command, got "${p.next()}"`);
   }
   p.consume();
 }

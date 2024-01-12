@@ -1,3 +1,4 @@
+const { ParseError } = require("./errors");
 const { isNumeric } = require("./predicates");
 
 function number(p) {
@@ -16,12 +17,12 @@ function number(p) {
 
 
   if (numberStr.length === 0) {
-    throw new SyntaxError(`Expected number, got "${p.next()}"`, true);
+    throw new ParseError(`Expected number, got "${p.next()}"`, true);
   }
 
   const number = Number(numberStr);
   if (isNaN(numberStr)) {
-    throw new SyntaxError(`Invalid number "${numberStr}"`);
+    throw new ParseError(`Invalid number "${numberStr}"`);
   }
 
   return {

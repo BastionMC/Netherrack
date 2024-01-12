@@ -1,3 +1,4 @@
+const { ParseError } = require("./errors");
 const { isNamespaceCharacter } = require("./predicates");
 
 function resourceLocation(p) {
@@ -8,7 +9,7 @@ function resourceLocation(p) {
   }
 
   if (namespace.length === 0) {
-    throw new SyntaxError(`Expected resource location, got "${p.next()}"`, true)
+    throw new ParseError(`Expected resource location, got "${p.next()}"`, true)
   }
 
   if (p.next() === ":") {

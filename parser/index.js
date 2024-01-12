@@ -1,4 +1,4 @@
-const { SyntaxError } = require("./errors");
+const { ParseError } = require("./errors");
 const { skipWhitespace, newline } = require("./helpers");
 const { command } = require("./commands");
 
@@ -33,7 +33,7 @@ class Parser {
       return parser(this);
     } catch (err) {
       if (err.recoverable) {
-        throw new SyntaxError(err.toString());
+        throw new ParseError(err.toString());
       }
       throw err;
     }
@@ -66,7 +66,7 @@ class Parser {
   expect(str) {
     const subStr = this.src.slice(this.pos, this.pos + str.length);
     if (subStr !== str) {
-      throw new SyntaxError(`Expected "${str}", got "${subStr}"`, true);
+      throw new ParseError(`Expected "${str}", got "${subStr}"`, true);
     }
     this.pos += str.length;
     return str;
