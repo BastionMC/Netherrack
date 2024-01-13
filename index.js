@@ -1,4 +1,4 @@
-const parse = require("./parser");
+const { parse } = require("./parser");
 const { inspect } = require("util");
 
 function log(value) {

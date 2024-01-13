@@ -77,4 +77,4 @@ class Parser {
   }
 }
 
-module.exports = parse;
+module.exports = { parse, Parser };

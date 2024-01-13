@@ -3,11 +3,6 @@ class ParseError extends Error {
     super(message);
     this.recoverable = recoverable;
   }
-
-  toString() {
-    console.log(this.recoverable);
-    return super.toString();
-  }
 }
 
 module.exports = {
