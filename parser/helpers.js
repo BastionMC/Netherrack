@@ -33,10 +33,22 @@ function skipWhitespace(p) {
   }
 }
 
+function choice(p, ...parsers) {
+  for (const parser of parsers) {
+    const result = p.optional(parser);
+    if (result !== null) {
+      return result;
+    }
+  }
+
+  throw new ParseError("Cannot match any parsers", true);
+}
+
 module.exports = {
   space,
   maybeSpace,
   newline,
   skipWhitespace,
+  choice,
 };
 

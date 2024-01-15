@@ -29,6 +29,24 @@ function vec3(p) {
   };
 }
 
+function rotation(p) {
+  const yaw = p.parse(coordinate);
+  if (yaw.variant === "local") {
+    throw new ParseError("Cannot use caret notation in rotation");
+  }
+  p.parse(space);
+  const pitch = p.must(coordinate);
+  if (pitch.variant === "local") {
+    throw new ParseError("Cannot use caret notation in rotation");
+  }
+
+  return {
+    type: "rotation",
+    yaw,
+    pitch,
+  };
+}
+
 function coordinate(p) {
   let variant = "absolute";
 
@@ -53,4 +71,5 @@ function coordinate(p) {
 
 module.exports = {
   vec3,
+  rotation,
 };

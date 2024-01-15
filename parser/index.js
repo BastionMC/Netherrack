@@ -24,13 +24,13 @@ class Parser {
     return commands;
   }
 
-  parse(parser) {
-    return parser(this); 
+  parse(parser, ...args) {
+    return parser(this, ...args); 
   } 
 
-  must(parser) {
+  must(parser, ...args) {
     try {
-      return parser(this);
+      return parser(this, ...args);
     } catch (err) {
       if (err.recoverable) {
         throw new ParseError(err.toString());
@@ -39,9 +39,9 @@ class Parser {
     }
   }
 
-  optional(parser) {
+  optional(parser, ...args) {
     try {
-      return parser(this);
+      return parser(this, ...args);
     } catch (err) {
       if (err.recoverable) {
         return null;

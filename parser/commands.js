@@ -1,8 +1,9 @@
-const { vec3 } = require("./coordinates");
+const { vec3, rotation } = require("./coordinates");
+const { entity } = require("./entities");
 const { ParseError } = require("./errors");
 const { space, maybeSpace } = require("./helpers");
 const { resourceLocation } = require("./identifiers");
-const { line } = require("./misc");
+const { line, facingAnchor } = require("./misc");
 const { isAlphabetic } = require("./predicates");
 
 function command(p) {
@@ -13,6 +14,10 @@ function command(p) {
 
     case "summon":
       return p.must(summonCommand);
+
+    case "teleport":
+    case "tp":
+      return p.must(teleportCommand);
 
     default:
       throw new ParseError(`Unrecognised command "${name}"`);
@@ -53,6 +58,75 @@ function summonCommand(p) {
     entity,
     position,
   };
+}
+
+function teleportCommand(p) {
+  p.parse(space);
+  let location = p.optional(vec3);
+  if (location !== null) {
+    return {
+      type: "command",
+      name: "teleport",
+      destination: location,
+    };
+  }
+  
+  const targetEntity = p.must(entity);
+
+  if (!p.parse(maybeSpace)) {
+    return {
+      type: "command",
+      name: "teleport",
+      destination: targetEntity,
+    };
+  }
+
+  const destination = p.optional(entity);
+  if (destination !== null) {
+    return {
+      type: "command",
+      name: "teleport",
+      targets: targetEntity,
+      destination,
+    };
+  }
+
+  location = p.must(vec3);
+
+  const command = {
+    type: "command",
+    name: "teleport",
+    targets: targetEntity,
+    destination: location,
+  };
+
+  if (!p.parse(maybeSpace)) {
+    return command;
+  }
+
+  const toRotation = p.optional(rotation);
+  if (toRotation !== null) {
+    command.rotation = toRotation;
+    return command;
+  }
+
+  p.expect("facing");
+  p.parse(space);
+
+  const facingLocation = p.optional(vec3);
+  if (facingLocation !== null) {
+    command.facing = facingLocation;
+    return command;
+  }
+
+  p.expect("entity");
+  p.parse(space);
+  command.facing = p.must(entity);
+  if (p.parse(maybeSpace)) {
+    command.facing_anchor = p.must(facingAnchor);
+  }
+
+  return command;
 }
 
 module.exports = {
