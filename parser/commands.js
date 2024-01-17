@@ -3,7 +3,7 @@ const { entity } = require("./entities");
 const { ParseError } = require("./errors");
 const { space, maybeSpace } = require("./helpers");
 const { resourceLocation } = require("./identifiers");
-const { line, facingAnchor } = require("./misc");
+const { line, entityAnchor } = require("./misc");
 const { isAlphabetic } = require("./predicates");
 
 function command(p) {
@@ -123,7 +123,7 @@ function teleportCommand(p) {
   p.parse(space);
   command.facing = p.must(entity);
   if (p.parse(maybeSpace)) {
-    command.facing_anchor = p.must(facingAnchor);
+    command.facing_anchor = p.must(entityAnchor);
   }
 
   return command;

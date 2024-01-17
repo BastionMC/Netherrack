@@ -9,7 +9,7 @@ function line(p) {
   return text;
 }
 
-function facingAnchor(p) {
+function entityAnchor(p) {
   return choice(
     p,
     p.expect.bind(p, "eyes"),
@@ -19,5 +19,5 @@ function facingAnchor(p) {
 
 module.exports = {
   line,
-  facingAnchor,
+  entityAnchor,
 };
