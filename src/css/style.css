@@ -1,0 +1,15 @@
+@import url(titlebar.css);
+@import url(footer.css);
+
+body {
+    font-family: sans-serif;
+
+    padding: 0px;
+    margin: 0px;
+
+    height: 100vh;
+    background-color: #222;
+
+    display: grid;
+    grid-template-rows: 32px calc(100% - 56px) 24px;
+}

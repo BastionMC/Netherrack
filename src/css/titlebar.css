@@ -1,0 +1,107 @@
+/* Titlebar Element Structure Reference
+
+<div class="titlebar">
+    <span class="window-icon"></span>
+    <div class="options"></div>
+    <div class="window-control"></div>
+</div>
+
+*/
+
+body > .titlebar {
+    background-color: #ccc;
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    gap: 8px;
+}
+body > .titlebar > span.window-icon {
+    display: block;
+    height: 16px;
+    width: 16px;
+    margin-left: 4px;
+    margin-right: 4px;
+
+    background-color: brown;
+}
+body > .titlebar > .options {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+body > .titlebar > .window-control {
+    position: fixed;
+    height: 32px;
+    right: 0px;
+    top: 0px;
+
+    display: flex;
+    flex-direction: row-reverse;
+}
+body > .titlebar > .window-control > * {
+    height: 16px;
+    width: 16px;
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    image-rendering: pixelated;
+    background-repeat: no-repeat;
+    background-position-y: 8px;
+    background-clip: content-box;
+}
+body > .titlebar > .window-control > *:hover::before {
+    display: block;
+    z-index: -20;
+    content: "";
+    position: absolute;
+    margin-top: -8px;
+    margin-left: -16px;
+    height: 32px;
+    width: 48px;
+    background-color: #bbb;
+}
+body > .titlebar > .window-control > *:active::before {
+    background-color: #aaa;
+}
+
+body > .titlebar > .window-control > span#gap {
+    height: 12px;
+    width: 2px;
+    padding: 0px !important;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 6px;
+    margin-right: 6px;
+    background: none;
+    background-color: #aaa;
+}
+body > .titlebar > .window-control > span#gap:hover::before,
+body > .titlebar > .window-control > span#gap:active::before {
+    display: none !important;
+}
+
+body > .titlebar > .window-control > span.window {
+    background-image: url("../../assets/window_actions.png");
+    background-size: 48px;
+}
+body > .titlebar > .window-control > span.window#close {
+    background-position-x: -16px;
+}
+body > .titlebar > .window-control > span.window#window {
+    background-position-x: 0px;
+}
+body > .titlebar > .window-control > span.window#minimize {
+    background-position-x: 16px;
+}
+
+body > .titlebar > .window-control > span.layout {
+    background-image: url("../../assets/window_layout.png");
+    background-size: 32px;
+}
+body > .titlebar > .window-control > span.layout#sidebar {
+    background-position-x: 16px;
+}
+body > .titlebar > .window-control > span.layout#customize {
+    background-position-x: 0px;
+}

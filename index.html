@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netherrack</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div class="titlebar">
+        <span class="window-icon"></span>
+        <div class="options">
+            <div>
+                <span>File</span>
+            </div>
+            <div>
+                <span>Edit</span>
+            </div>
+        </div>
+        <div class="window-control">
+            <span class="window" id="close"></span>
+            <span class="window" id="window"></span>
+            <span class="window" id="minimize"></span>
+            <span id="gap"></span>
+            <span class="layout" id="customize"></span>
+            <span class="layout" id="sidebar"></span>
+        </div>
+    </div>
+    <div class="content"></div>
+    <div class="footer">
+        <div class="save-location" id="version-control">
+            <span class="icon"></span>
+            <span id="path">BastionMC/Netherrack</span>
+        </div>
+        <span id="gap"></span>
+        <div class="save-location" id="world">
+            <span class="icon"></span>
+            <span id="path">
+                <span class="icon" id="folder"></span>
+                fabric-1.20.4
+                <span class="icon" id="folder"></span>
+                <span class="icon" id="saves"></span>
+                <span class="icon" id="folder"></span>
+                My World
+            </span>
+        </div>
+        <span id="gap"></span>
+    </div>
+    <script src="src/js/index.js"></script>
+</body>
+</html>
