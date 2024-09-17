@@ -23,12 +23,32 @@ body > .footer {
     padding-right: 8px;
     gap: 16px;
     color: white;
+
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-top-color: #111;
 }
 
 body > .footer > .save-location {
     display: flex;
     flex-direction: row;
     gap: 2px;
+    user-select: none;
+    cursor: pointer;
+}
+body > .footer > .save-location:hover,
+body > .footer > .save-location:active {
+    background-color: #444;
+
+    padding-top: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: -4px;
+    margin-left: -16px;
+    margin-right: -16px;
+}
+body > .footer > .save-location:active {
+    background-color: #333;
 }
 
 body > .footer > #gap {
@@ -64,4 +84,58 @@ body > .footer > .save-location > #path >  .icon#saves {
 body > .footer > .save-location > #path > .icon#folder {
     background-position-x: -48px;
     width: 10px;
+}
+
+body > .footer > .save-location > #tooltip {
+    display: none;
+}
+body > .footer > .save-location:hover > #tooltip {
+    position: fixed;
+    bottom: 40px;
+    display: block;
+    padding: 8px;
+    height: auto;
+    width: auto;
+    min-width: 256px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #111;
+    background-color: #333;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+body > .footer > .save-location:hover > #tooltip::before {
+    content: "";
+    position: fixed;
+    bottom: 32px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #111;
+    background-color: #333;
+    rotate: 45deg;
+    border-top-color: transparent;
+    border-left-color: transparent;
+
+    transform: translateX(16px) translateY(-16px);
+}
+
+body > .footer > .save-location > #tooltip > .title {
+    font-family: "Five";
+    color: white;
+    margin-left: 4px;
+}
+body > .footer > .save-location > #tooltip > .full-path {
+    height: 16px;
+    padding: 4px;
+    padding-right: 8px;
+    padding-left: 8px;
+    background-color: #222;
+}
+body > .footer > .save-location > #tooltip > .shortcut {
+    text-align: right;
 }

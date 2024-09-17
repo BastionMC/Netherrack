@@ -25,9 +25,11 @@ body > .titlebar > span.window-icon {
     background-color: brown;
 }
 body > .titlebar > .options {
+    font-size: 14px;
     display: flex;
     flex-direction: row;
     gap: 8px;
+    align-items: center;
 }
 
 body > .titlebar > .window-control {

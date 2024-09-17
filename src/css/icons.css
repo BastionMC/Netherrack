@@ -1,0 +1,12 @@
+.mouse-l::before {
+    margin-right: 4px;
+    margin-left: 8px;
+    content: "";
+    height: 16px;
+    width: 16px;
+    background-size: 64px;
+    image-rendering: pixelated;
+    background-image: url("../../assets/mouse.png");
+    background-position-x: -16px;
+    display: inline-block;
+}

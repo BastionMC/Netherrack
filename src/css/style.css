@@ -1,15 +1,24 @@
 @import url(titlebar.css);
 @import url(footer.css);
+@import url(font.css);
+@import url(icons.css);
 
 body {
-    font-family: sans-serif;
+    font-family: "Noto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 
     padding: 0px;
     margin: 0px;
 
     height: 100vh;
     background-color: #222;
+    color: #ccc;
 
     display: grid;
-    grid-template-rows: 32px calc(100% - 56px) 24px;
+    grid-template-rows: 32px calc(100% - 58px) 26px;
+}
+
+.shortcut {
+    color: #aaa;
 }
