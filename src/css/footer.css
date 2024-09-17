@@ -135,6 +135,13 @@ body > .footer > .save-location > #tooltip > .full-path {
     padding-right: 8px;
     padding-left: 8px;
     background-color: #222;
+
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-color: #111;
+    border-bottom-color: #555;
 }
 body > .footer > .save-location > #tooltip > .shortcut {
     text-align: right;
