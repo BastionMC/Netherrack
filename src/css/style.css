@@ -16,7 +16,7 @@ body {
     color: #ccc;
 
     display: grid;
-    grid-template-rows: 32px calc(100% - 58px) 26px;
+    grid-template-rows: 34px calc(100% - 60px) 26px;
 }
 
 .shortcut {

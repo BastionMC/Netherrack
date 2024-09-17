@@ -14,6 +14,9 @@ body > .titlebar {
     flex-direction: row;
     padding: 8px;
     gap: 8px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #111;
 }
 body > .titlebar > span.window-icon {
     display: block;
@@ -22,7 +25,9 @@ body > .titlebar > span.window-icon {
     margin-left: 4px;
     margin-right: 4px;
 
-    background-color: brown;
+    background-image: url("../../assets/logo.png");
+    background-size: cover;
+    image-rendering: pixelated;
 }
 body > .titlebar > .options {
     font-size: 14px;
