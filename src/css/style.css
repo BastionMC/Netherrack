@@ -2,6 +2,7 @@
 @import url(footer.css);
 @import url(font.css);
 @import url(icons.css);
+@import url(content.css);
 
 body {
     font-family: "Noto", sans-serif;

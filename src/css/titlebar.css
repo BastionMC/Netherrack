@@ -17,6 +17,7 @@ body > .titlebar {
     border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: #111;
+    color: #000;
 }
 body > .titlebar > span.window-icon {
     display: block;

@@ -1,0 +1,104 @@
+body > .content {
+    display: grid;
+    gap: 2px;
+
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+}
+body > .content > #sidebar {
+    display: grid;
+    grid-template-columns: calc(48px + 2px) calc(256px + 2px);
+    grid-template-rows: auto;
+}
+
+body > .content > #sidebar > #sidebar-list {
+    border-right-style: solid;
+    border-right-color: #222;
+    border-right-width: 2px;
+    
+    background-color: #333;
+    width: 48px;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+body > .content > #sidebar > #sidebar-list > span {
+    height: 48px;
+    width: 48px;
+    display: grid;
+    border-bottom-style: solid;
+    border-bottom-color: #222;
+    border-bottom-width: 2px;
+}
+body > .content > #sidebar > #sidebar-list > span:hover {
+    background-color: #444;
+}
+body > .content > #sidebar > #sidebar-list > span:active {
+    background-color: #333;
+}
+body > .content > #sidebar > #sidebar-list > span::after {
+    content: "";
+    height: 24px;
+    width: 24px;
+    background-image: url("../../assets/sidebar.png");
+    background-size: 96px;
+    image-rendering: pixelated;
+    display: block;
+    align-self: center;
+    justify-self: center;
+}
+body > .content > #sidebar > #sidebar-list > span#extensions::after {
+    background-position-x: -24px;
+}
+body > .content > #sidebar > #sidebar-list > span#placeholder1::after {
+    background-position-x: -48px;
+}
+body > .content > #sidebar > #sidebar-list > span#placeholder2::after {
+    background-position-x: -72px;
+}
+
+body > .content > #sidebar > #sidebar-list > span > #tooltip {
+    display: none;
+}
+body > .content > #sidebar > #sidebar-list > span:hover > #tooltip {
+    position: fixed;
+    display: block;
+    align-self: center;
+    left: 64px;
+
+    height: 20px;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #111;
+    background-color: #333;
+    font-size: 14px;
+}
+body > .content > #sidebar > #sidebar-list > span > #tooltip::before {
+    content: "";
+    position: fixed;
+    left: 30px;
+    display: block;
+    height: 8px;
+    width: 8px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #111;
+    background-color: #333;
+    rotate: 45deg;
+    border-right-color: transparent;
+    border-top-color: transparent;
+
+    transform: translateX(24px) translateY(-18px);
+}
+
+body > .content > #sidebar > #sidebar-menu {
+    border-right-style: solid;
+    border-right-color: #111;
+    border-right-width: 2px;
+    
+    background-color: #333;
+    width: 256px;
+}
