@@ -3,13 +3,22 @@ body > .content {
     gap: 2px;
 
     grid-template-rows: auto;
-    grid-template-columns: auto auto;
+    grid-template-columns: min-content auto;
 }
 body > .content > #sidebar {
     display: grid;
     grid-template-columns: calc(48px + 2px) calc(256px + 2px);
     grid-template-rows: auto;
 }
+body > .content > #sidebar.menu-hidden {
+    grid-template-columns: calc(48px + 2px);
+}
+body > .content > #sidebar.menu-hidden > #sidebar-menu {
+    display: none;
+} 
+body > .content > #sidebar.menu-hidden > #sidebar-list {
+    border-right-color: #111;
+} 
 
 body > .content > #sidebar > #sidebar-list {
     border-right-style: solid;

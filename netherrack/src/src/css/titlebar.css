@@ -93,13 +93,13 @@ body > .titlebar > .window-control > span.window {
     background-image: url("../../assets/window_actions.png");
     background-size: 48px;
 }
-body > .titlebar > .window-control > span.window#close {
+body > .titlebar > .window-control > span.window#titlebar-close {
     background-position-x: -16px;
 }
-body > .titlebar > .window-control > span.window#window {
+body > .titlebar > .window-control > span.window#titlebar-maximize {
     background-position-x: 0px;
 }
-body > .titlebar > .window-control > span.window#minimize {
+body > .titlebar > .window-control > span.window#titlebar-minimize {
     background-position-x: 16px;
 }
 
@@ -107,9 +107,9 @@ body > .titlebar > .window-control > span.layout {
     background-image: url("../../assets/window_layout.png");
     background-size: 32px;
 }
-body > .titlebar > .window-control > span.layout#sidebar {
+body > .titlebar > .window-control > span.layout#titlebar-sidebar {
     background-position-x: 16px;
 }
-body > .titlebar > .window-control > span.layout#customize {
+body > .titlebar > .window-control > span.layout#titlebar-customize {
     background-position-x: 0px;
 }

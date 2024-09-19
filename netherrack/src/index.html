@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netherrack</title>
     <link rel="stylesheet" href="src/css/style.css">
+    <script type="module" src="src/js/index.js"></script>
 </head>
 <body>
-    <div class="titlebar">
+    <div data-tauri-drag-region class="titlebar">
         <span class="window-icon"></span>
         <div class="options">
             <div>
@@ -16,24 +17,18 @@
             <div>
                 <span>Edit</span>
             </div>
-            <div>
-                <span>-----</span>
-            </div>
-            <div>
-                <span>Lots'o placeholders, tooltip designs are not final!</span>
-            </div>
         </div>
         <div class="window-control">
-            <span class="window" id="close"></span>
-            <span class="window" id="window"></span>
-            <span class="window" id="minimize"></span>
+            <span class="window" id="titlebar-close"></span>
+            <span class="window" id="titlebar-maximize"></span>
+            <span class="window" id="titlebar-minimize"></span>
             <span id="gap"></span>
-            <span class="layout" id="customize"></span>
-            <span class="layout" id="sidebar"></span>
+            <span class="layout" id="titlebar-customize"></span>
+            <span class="layout" id="titlebar-sidebar"></span>
         </div>
     </div>
     <div class="content">
-        <div id="sidebar">
+        <div id="sidebar" class="menu-shown">
             <div id="sidebar-list">
                 <span id="explorer">
                     <span id="tooltip">Explorer</span>
@@ -50,7 +45,7 @@
             </div>
             <div id="sidebar-menu"></div>
         </div>
-        <div id="content"></div>
+        <div id="content">Curios, are ya? Well, then lemme tell ya about them planssss<br><br>they follow the following: uhh make the border ui stuff as minimal, minecraft, themed, and good looking as possible, currently the sidebar is REALLY wip</div>
     </div>
     <div class="footer">
         <div class="save-location" id="version-control">
@@ -85,6 +80,5 @@
         </div>
         <span id="gap"></span>
     </div>
-    <script src="src/js/index.js"></script>
 </body>
 </html>
