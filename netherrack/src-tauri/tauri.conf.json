@@ -6,7 +6,7 @@
         "withGlobalTauri": true
     },
     "package": {
-        "productName": "Netherrack",
+        "productName": "netherrack",
         "version": "0.1.0"
     },
     "tauri": {
@@ -67,7 +67,14 @@
         "bundle": {
             "active": true,
             "targets": "all",
+
             "identifier": "com.bastionmc.netherrack",
+            "publisher": "BastionMC",
+            "category": "DeveloperTool",
+            "shortDescription": "An IDE for datapacks.",
+            "longDescription": "A highly configurable open-source IDE for datapacks.",
+            "copyright": "BastionMC & Netherrack Contributors, 2024",
+
             "icon": [
                 "icons/32x32.png",
                 "icons/128x128.png",
