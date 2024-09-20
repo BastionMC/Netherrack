@@ -1,4 +1,11 @@
 const { appWindow } = window.__TAURI__.window;
+const invoke = window.__TAURI__.invoke;
+
+document.addEventListener("DOMContentLoaded", function () {
+    window.setTimeout(function () {
+        invoke("close_splashscreen");
+    }, 2000);
+});
 
 function nthr_ToggleSideBarList() {
     let sideBar = document.getElementById("sidebar");
@@ -7,7 +14,7 @@ function nthr_ToggleSideBarList() {
         sideBar.className = "menu-hidden";
     } else {
         sideBar.className = "menu-shown";
-    }
+    };
 };
 
 document.getElementById("titlebar-minimize").addEventListener("click", appWindow.minimize);
