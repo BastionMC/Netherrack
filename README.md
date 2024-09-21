@@ -2,8 +2,8 @@
 
 ## Dependencies
 > ### [Tauri](https://tauri.app/)
-> ### Rust
-> ### Node.js
+> ### [Rust](https://www.rust-lang.org/)
+> ### [Node.js](https://nodejs.org/)
 
 ## How to build from source
 > ### Linux (General)
