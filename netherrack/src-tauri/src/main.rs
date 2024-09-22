@@ -10,7 +10,10 @@ async fn close_splashscreen(window: Window) {
     // Close splashscreen
     window.get_window("splashscreen").expect("no window labeled 'splashscreen' found").close().unwrap();
     // Show main window
+    
     window.get_window("main").expect("no window labeled 'main' found").show().unwrap();
+    window.get_window("main").expect("no window labeled 'main' found").unminimize().unwrap();
+    window.get_window("main").expect("no window labeled 'main' found").set_focus().unwrap();
 }
 
 fn main() {
