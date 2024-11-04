@@ -111,3 +111,40 @@ body > .content > #sidebar > #sidebar-menu {
     background-color: #333;
     width: 256px;
 }
+
+body > .content > #content {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: 0px auto;
+}
+body > .content > #content > #codeArea {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: unset;
+    resize: none;
+    font-size: 16px;
+    padding: 16px;
+    overflow-y: hidden;
+    line-height: 1;
+
+    grid-row: 2;
+    grid-column: 2;
+}
+body > .content > #content > #lineNumbers {
+    display: block;
+    padding: 16px;
+    padding-right: 0px;
+    padding-left: 8px;
+    font-size: 16px;
+    line-height: 1;
+    width: fit-content;
+    font-family: monospace;
+    overflow-y: hidden;
+
+    grid-row: 2;
+    grid-column: 1;
+    text-align: right;
+    opacity: 0.5;
+}

@@ -4,7 +4,7 @@ const invoke = window.__TAURI__.invoke;
 document.addEventListener("DOMContentLoaded", function () {
     window.setTimeout(function () {
         invoke("close_splashscreen");
-    }, 2000 + 5000);
+    }, 2000);
 });
 
 function nthr_ToggleSideBarList() {

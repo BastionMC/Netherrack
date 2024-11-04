@@ -6,6 +6,7 @@
     <title>Netherrack</title>
     <link rel="stylesheet" href="src/css/style.css">
     <script type="module" src="src/js/index.js"></script>
+    <script type="module" src="src/js/text_edit.js"></script>
 </head>
 <body>
     <div data-tauri-drag-region class="titlebar">
@@ -45,7 +46,11 @@
             </div>
             <div id="sidebar-menu"></div>
         </div>
-        <div id="content">Curios, are ya? Well, then lemme tell ya about them planssss<br><br>they follow the following: uhh make the border ui stuff as minimal, minecraft, themed, and good looking as possible, currently the sidebar is REALLY wip</div>
+        <div id="content">
+            <div style="display: none;" id="tabs"></div>
+            <div id="lineNumbers">1</div>
+            <textarea autofocus="true" spellcheck="false" wrap="off" id="codeArea"></textarea>
+        </div>
     </div>
     <div class="footer">
         <div class="save-location" id="version-control">
