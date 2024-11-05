@@ -24,6 +24,7 @@ function isScrollingUp(event) {
 }
 
 codeArea.addEventListener("input", setLineNumbers);
+codeArea.addEventListener("keydown", setLineNumbers);
 
 function setLineNumbers() {
     let lineCount = codeArea.value.split("\n").length;
@@ -34,3 +35,13 @@ function setLineNumbers() {
     lineNumbers.innerHTML = newNumbers;
     lineNumbers.scrollTop = codeArea.scrollTop;
 };
+
+codeArea.addEventListener("paste", (event) => {
+    const startPosition = textarea.selectionStart;
+
+    setTimeout(() => {
+        const pastedText = event.clipboardData.getData("text");
+        const endPosition = startPosition + pastedText.length;
+        textarea.selectionStart = textarea.selectionEnd = endPosition;
+    }, 0);
+});

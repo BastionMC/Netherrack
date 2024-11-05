@@ -27,3 +27,6 @@ html {
 .shortcut {
     color: #aaa;
 }
+*::selection {
+    background-color: #fff2;
+}

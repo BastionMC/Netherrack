@@ -22,3 +22,9 @@ document.getElementById("titlebar-maximize").addEventListener("click", appWindow
 document.getElementById("titlebar-close").addEventListener("click", appWindow.close);
 
 document.getElementById("titlebar-sidebar").addEventListener("click", nthr_ToggleSideBarList);
+
+// document.body.addEventListener("dblclick", (event) => {
+//     if (event.target === document.body) {
+//         appWindow.toggleMaximize();
+//     };
+// }); FOR FUTURE USE, BROKEN RN WITH THE TITLEBAR :^)
