@@ -1,7 +1,10 @@
 let codeArea = document.getElementById("codeArea");
 let lineNumbers = document.getElementById("lineNumbers");
 
+let content = document.getElementById("codeArea");
+
 codeArea.addEventListener("wheel", updateScroll);
+lineNumbers.addEventListener("wheel", updateScroll);
 
 function updateScroll(event) {
     if (isScrollingUp(event)) {
@@ -9,7 +12,8 @@ function updateScroll(event) {
     } else {
         codeArea.scrollTop += 32;
     }
-    lineNumbers.scrollTop = codeArea.scrollTop
+    lineNumbers.scrollTop = codeArea.scrollTop;
+    console.log("scroll update")
 }
 
 function isScrollingUp(event) {
@@ -28,4 +32,5 @@ function setLineNumbers() {
         newNumbers += i+"<br>";
     }
     lineNumbers.innerHTML = newNumbers;
+    lineNumbers.scrollTop = codeArea.scrollTop;
 };

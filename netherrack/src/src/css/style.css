@@ -9,10 +9,10 @@ body {
     font-weight: 400;
     font-style: normal;
 
-    padding: 0px;
     margin: 0px;
+    border: #111 2px solid;
 
-    height: 100vh;
+    height: calc(100vh - 4px); /* account for border */
     background-color: #222;
     color: #ccc;
 

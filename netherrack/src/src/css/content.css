@@ -4,6 +4,9 @@ body > .content {
 
     grid-template-rows: auto;
     grid-template-columns: min-content auto;
+
+    max-height: calc(100vh - 64px);
+    overflow: hidden;
 }
 body > .content > #sidebar {
     display: grid;
@@ -116,6 +119,7 @@ body > .content > #content {
     display: grid;
     grid-template-columns: min-content auto;
     grid-template-rows: 0px auto;
+    max-height: calc(100vh - 64px);
 }
 body > .content > #content > #codeArea {
     appearance: none;
@@ -126,6 +130,7 @@ body > .content > #content > #codeArea {
     resize: none;
     font-size: 16px;
     padding: 16px;
+    padding-left: 0px;
     overflow-y: hidden;
     line-height: 1;
 
@@ -135,8 +140,6 @@ body > .content > #content > #codeArea {
 body > .content > #content > #lineNumbers {
     display: block;
     padding: 16px;
-    padding-right: 0px;
-    padding-left: 8px;
     font-size: 16px;
     line-height: 1;
     width: fit-content;
@@ -147,4 +150,6 @@ body > .content > #content > #lineNumbers {
     grid-column: 1;
     text-align: right;
     opacity: 0.5;
+
+    user-select: none;
 }
