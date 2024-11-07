@@ -1,3 +1,5 @@
+// jesus christ the fucking line numbers are desynced im fucking loooooooooooooooosing it 😀😀😀😀😀😀😀😀😀😀😀😀😀
+
 let codeArea = document.getElementById("codeArea");
 let lineNumbers = document.getElementById("lineNumbers");
 
@@ -24,7 +26,6 @@ function isScrollingUp(event) {
 }
 
 codeArea.addEventListener("input", setLineNumbers);
-codeArea.addEventListener("keydown", setLineNumbers);
 
 function setLineNumbers() {
     let lineCount = codeArea.value.split("\n").length;

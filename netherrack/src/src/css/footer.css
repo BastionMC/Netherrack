@@ -47,6 +47,11 @@ body > .footer > .save-location:active {
     margin-left: -16px;
     margin-right: -16px;
 }
+body > .footer > .save-location:nth-child(1):hover,
+body > .footer > .save-location:nth-child(1):active {
+    padding-left: 8px;
+    margin-left: -8px;
+}
 body > .footer > .save-location:active {
     background-color: #333;
 }

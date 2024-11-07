@@ -113,6 +113,23 @@ body > .content > #sidebar > #sidebar-menu {
     
     background-color: #333;
     width: 256px;
+    user-select: none;
+
+    display: grid;
+    grid-template-rows: 32px auto;
+    grid-template-columns: auto;
+    gap: 8px;
+}
+body > .content > #sidebar > #sidebar-menu > .title {
+    border-bottom: 2px #222 solid;
+    padding: 8px;
+    line-height: 1;
+}
+body > .content > #sidebar > #sidebar-menu > .title > #title {
+    font-family: "Five";
+    font-size: 12px;
+    display: block;
+    color: white;
 }
 
 body > .content > #content {
