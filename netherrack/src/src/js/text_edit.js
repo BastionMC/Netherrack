@@ -1,5 +1,3 @@
-// jesus christ the fucking line numbers are desynced im fucking loooooooooooooooosing it 😀😀😀😀😀😀😀😀😀😀😀😀😀
-
 let codeArea = document.getElementById("codeArea");
 let lineNumbers = document.getElementById("lineNumbers");
 
