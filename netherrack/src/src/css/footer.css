@@ -150,4 +150,5 @@ body > .footer > .save-location > #tooltip > .full-path {
 }
 body > .footer > .save-location > #tooltip > .shortcut {
     text-align: right;
+    color: white;
 }

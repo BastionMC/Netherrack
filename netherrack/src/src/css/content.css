@@ -137,6 +137,7 @@ body > .content > #content {
     grid-template-columns: min-content auto;
     grid-template-rows: 0px auto;
     max-height: calc(100vh - 64px);
+    overflow-y: scroll;
 }
 body > .content > #content > #codeArea {
     appearance: none;
@@ -148,11 +149,11 @@ body > .content > #content > #codeArea {
     font-size: 16px;
     padding: 16px;
     padding-left: 0px;
-    overflow-y: hidden;
     line-height: 1;
 
     grid-row: 2;
     grid-column: 2;
+    overflow-y: hidden;
 }
 body > .content > #content > #lineNumbers {
     display: block;
@@ -161,7 +162,6 @@ body > .content > #content > #lineNumbers {
     line-height: 1;
     width: fit-content;
     font-family: monospace;
-    overflow-y: hidden;
 
     grid-row: 2;
     grid-column: 1;

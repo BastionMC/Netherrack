@@ -25,8 +25,21 @@ html {
 }
 
 .shortcut {
-    color: #aaa;
+    color: transparent;
 }
 *::selection {
     background-color: #fff2;
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+    background: #8888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #888; 
 }

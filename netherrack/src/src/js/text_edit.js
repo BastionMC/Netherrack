@@ -10,11 +10,10 @@ lineNumbers.addEventListener("wheel", updateScroll);
 
 function updateScroll(event) {
     if (isScrollingUp(event)) {
-        codeArea.scrollTop -= 32;
+        // content.scrollTop -= 32;
     } else {
-        codeArea.scrollTop += 32;
+        // content.scrollTop += 32;
     }
-    lineNumbers.scrollTop = codeArea.scrollTop;
     console.log("scroll update")
 }
 
@@ -34,7 +33,6 @@ function setLineNumbers() {
         newNumbers += i+"<br>";
     }
     lineNumbers.innerHTML = newNumbers;
-    lineNumbers.scrollTop = codeArea.scrollTop;
 };
 
 codeArea.addEventListener("paste", (event) => {
