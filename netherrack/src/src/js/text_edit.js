@@ -8,22 +8,6 @@ let content = document.getElementById("codeArea");
 codeArea.addEventListener("wheel", updateScroll);
 lineNumbers.addEventListener("wheel", updateScroll);
 
-function updateScroll(event) {
-    if (isScrollingUp(event)) {
-        // content.scrollTop -= 32;
-    } else {
-        // content.scrollTop += 32;
-    }
-    console.log("scroll update")
-}
-
-function isScrollingUp(event) {
-    if (event.wheelDelta) {
-        return event.wheelDelta > 0;
-    }
-    return event.deltaY < 0;
-}
-
 codeArea.addEventListener("input", setLineNumbers);
 
 function setLineNumbers() {
