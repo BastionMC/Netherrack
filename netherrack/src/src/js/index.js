@@ -27,4 +27,4 @@ document.getElementById("titlebar-sidebar").addEventListener("click", nthr_Toggl
 //     if (event.target === document.body) {
 //         appWindow.toggleMaximize();
 //     };
-// }); FOR FUTURE USE, BROKEN RN WITH THE TITLEBAR :^)
+// }); FOR FUTURE USE, BROKEN RN WITH THE TITLEBAR :3

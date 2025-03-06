@@ -29,15 +29,28 @@
         #version {
             position: fixed;
             bottom: 8px;
-            right: 16px;
+            left: 16px;
             font-family: "Five";
             color: white;
+        }
+        #loading {
+            position: fixed;
+            bottom: 8px;
+            right: 16px;
+            display: block;
+            background-image: url("assets/loading.apng");
+            background-size: 24px;
+            height: 24px;
+            width: 24px;
+            margin: 2px;
+            image-rendering: pixelated
         }
     </style>
 </head>
 <body>
-    <img draggable="false" src="assets/splash.png"></img>
-    <span id="version"></span>
+    <img data-tauri-drag-region draggable="false" src="assets/splash.png"></img>
+    <span data-tauri-drag-region id="version"></span>
+    <span data-tauri-drag-region id="loading"></span>
     <script>
         async function setVersion() {
             document.getElementById("version").innerText = await window.__TAURI__.app.getVersion();   
