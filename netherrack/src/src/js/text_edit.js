@@ -3,9 +3,6 @@ let lineNumbers = document.getElementById("lineNumbers");
 
 let content = document.getElementById("codeArea");
 
-codeArea.addEventListener("wheel", updateScroll);
-lineNumbers.addEventListener("wheel", updateScroll);
-
 codeArea.addEventListener("input", setLineNumbers);
 
 function setLineNumbers() {
