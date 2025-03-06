@@ -19,6 +19,7 @@ body {
     display: grid;
     grid-template-rows: 34px calc(100% - 60px) 26px;
     overflow: none;
+    border-radius: 32px;
 }
 html {
     overflow: none;
